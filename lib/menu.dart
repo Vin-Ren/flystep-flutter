@@ -4,14 +4,10 @@ class MyHomePage extends StatelessWidget {
     MyHomePage({super.key});
 
     final List<ItemHomepage> items = [
-      ItemHomepage("All Products", Icons.library_books, ColorScheme.fromSwatch(primarySwatch: Colors.blue).copyWith(secondary: Colors.blueAccent[400])),
-      ItemHomepage("My Products", Icons.person, ColorScheme.fromSwatch(primarySwatch: Colors.green).copyWith(secondary: Colors.green[400])),
-      ItemHomepage("Create Product", Icons.add, ColorScheme.fromSwatch(primarySwatch: Colors.red).copyWith(secondary: Colors.red[400])),
+      ItemHomepage("All Products", Icons.library_books, Colors.blue),
+      ItemHomepage("My Products", Icons.person, Colors.green),
+      ItemHomepage("Create Product", Icons.add, Colors.red),
     ];
-
-    final String nama = "Vincent Valentino Oei"; //nama
-    final String npm = "2406353225"; //npm
-    final String kelas = "E"; //kelas
 
     @override
     Widget build(BuildContext context) {
@@ -19,9 +15,8 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
       // AppBar adalah bagian atas halaman yang menampilkan judul.
       appBar: AppBar(
-        // Judul aplikasi "Football News" dengan teks putih dan tebal.
         title: const Text(
-          'Football News',
+          'Flystep',
           style: TextStyle(
             color: Colors.white,
             fontWeight: FontWeight.bold,
@@ -37,19 +32,6 @@ class MyHomePage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            // Row untuk menampilkan 3 InfoCard secara horizontal.
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                InfoCard(title: 'NPM', content: npm),
-                InfoCard(title: 'Name', content: nama),
-                InfoCard(title: 'Class', content: kelas),
-              ],
-            ),
-
-            // Memberikan jarak vertikal 16 unit.
-            const SizedBox(height: 16.0),
-
             // Menempatkan widget berikutnya di tengah halaman.
             Center(
               child: Column(
@@ -60,7 +42,7 @@ class MyHomePage extends StatelessWidget {
                   const Padding(
                     padding: EdgeInsets.only(top: 16.0),
                     child: Text(
-                      'Selamat datang di Football News',
+                      'Selamat datang di Flystep',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 18.0,
@@ -93,45 +75,12 @@ class MyHomePage extends StatelessWidget {
   }
 }
 
-class InfoCard extends StatelessWidget {
-  // Kartu informasi yang menampilkan title dan content.
-
-  final String title;  // Judul kartu.
-  final String content;  // Isi kartu.
-
-  const InfoCard({super.key, required this.title, required this.content});
-
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      // Membuat kotak kartu dengan bayangan dibawahnya.
-      elevation: 2.0,
-      child: Container(
-        // Mengatur ukuran dan jarak di dalam kartu.
-        width: MediaQuery.of(context).size.width / 3.5, // menyesuaikan dengan lebar device yang digunakan.
-        padding: const EdgeInsets.all(16.0),
-        // Menyusun title dan content secara vertikal.
-        child: Column(
-          children: [
-            Text(
-              title,
-              style: const TextStyle(fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 8.0),
-            Text(content),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
 class ItemHomepage {
  final String name;
  final IconData icon;
- final ColorScheme colorScheme;
+ final Color color;
 
- ItemHomepage(this.name, this.icon, this.colorScheme);
+ ItemHomepage(this.name, this.icon, this.color);
 }
 
 class ItemCard extends StatelessWidget {
@@ -145,7 +94,7 @@ class ItemCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       // Menentukan warna latar belakang dari tema aplikasi.
-      color: item.colorScheme.primary,
+      color: item.color,
       // Membuat sudut kartu melengkung.
       borderRadius: BorderRadius.circular(12),
 
@@ -156,7 +105,7 @@ class ItemCard extends StatelessWidget {
           ScaffoldMessenger.of(context)
             ..hideCurrentSnackBar()
             ..showSnackBar(
-              SnackBar(content: Text("Kamu telah menekan tombol ${item.name}!"))
+              SnackBar(content: Text("Kamu telah menekan tombol ${item.name}."))
             );
         },
         // Container untuk menyimpan Icon dan Text
