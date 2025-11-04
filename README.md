@@ -20,14 +20,16 @@ Parent dapat mengatur dan mengelola child melalui properti dan metode yang dised
 ### 2. Sebutkan semua widget yang kamu gunakan dalam proyek ini dan jelaskan fungsinya.
 - `MaterialApp`: Widget root yang menyediakan tema dan navigasi dasar untuk aplikasi.
 - `Scaffold`: Menyediakan struktur dasar untuk halaman aplikasi, termasuk app bar, body, dan floating action button.
-- `AppBar`: Menampilkan bilah aplikasi di bagian atas layar.
-- `ListView`: Menampilkan daftar item yang dapat digulir secara vertikal.
+- `AppBar`: Menampilkan header aplikasi di bagian atas layar.
+- `ListView`: Menampilkan daftar item yang dapat discroll secara vertikal.
 - `Card`: Menampilkan informasi produk dalam bentuk kartu yang terpisah.
 - `Center`: Memusatkan widget anaknya di dalam ruang yang tersedia.
 - `Row`: Menyusun widget anaknya secara horizontal.
 - `Column`: Menyusun widget anaknya secara vertikal.
 - `Padding`: Memberikan ruang kosong di sekitar widget anaknya.
+- `GridView`: Menampilkan item dalam bentuk grid yang dapat discroll.
 - `SizedBox`: Memberikan ruang kosong dengan ukuran tertentu.
+- `Icon`: Menampilkan ikon.
 - `Text`: Menampilkan teks di layar.
 
 
