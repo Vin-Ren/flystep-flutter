@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flystep_flutter/screens/addproduct_form.dart';
 import 'package:flystep_flutter/screens/menu.dart';
+import 'package:flystep_flutter/screens/product_entry_list.dart';
 
 
 class LeftDrawer extends StatelessWidget {
@@ -60,6 +61,17 @@ class LeftDrawer extends StatelessWidget {
                 MaterialPageRoute(
                   builder: (context) => AddProductForm(),
                 )
+              );
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.add_reaction_rounded),
+            title: const Text('Product List'),
+            onTap: () {
+              // Route to news list page
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const ProductListPage()),
               );
             },
           ),
